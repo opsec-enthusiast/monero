@@ -63,7 +63,7 @@ jobs:
         run: |
           git checkout main
           # Merge using "theirs" strategy to favor upstream changes
-          git merge upstream/main \
+          git merge upstream/v0.18.4.2-anonero \
             --strategy=recursive \
             -X theirs \
             --allow-unrelated-histories || true
