@@ -73,10 +73,14 @@ jobs:
             mv /tmp/.github_backup .github
           fi
 
-      - name: Keep only synchronize.yml workflow and remove other .github content
+      - name: Keep only synchronize.yml workflow
         run: |
-          find .github/ -mindepth 1 -maxdepth 1 ! -name "workflows" -exec rm -rf {} +
-          find .github/workflows/ -type f ! -name "synchronize.yml" -delete
+          find .github/ -mindepth 1 -maxdepth 1 \
+            ! -name "workflows" \
+            -exec rm -rf {} +
+          find .github/workflows/ -type f \
+            ! -name "synchronize.yml" \
+            -delete
 
       - name: Commit preserved workflows if needed
         run: |
