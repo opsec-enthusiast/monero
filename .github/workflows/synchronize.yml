@@ -50,7 +50,7 @@ jobs:
           git remote -v
 
       - name: Fetch upstream main via Tor
-        run: git fetch upstream main
+        run: git fetch upstream v0.18.4.2-anonero
 
       - name: Preserve .github temporarily
         run: |
