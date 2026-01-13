@@ -9,6 +9,7 @@ name: Synchronize from Upstream
 
 permissions:
   contents: write
+  actions: write
 
 jobs:
   sync:
@@ -59,7 +60,7 @@ jobs:
             mv .github /tmp/.github_backup
           fi
 
-      - name: Merge upstream/main into main
+      - name: Merge upstream/v0.18.4.2-anonero into main
         run: |
           git checkout main
           # Merge using "theirs" strategy to favor upstream changes
